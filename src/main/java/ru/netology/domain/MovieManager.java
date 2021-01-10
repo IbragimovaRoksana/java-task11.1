@@ -3,11 +3,15 @@ package ru.netology.domain;
 
 public class MovieManager {
 
-    private Movie[] posters = new Movie[0];
+    private MovieRepository repository;
     private int countMovie = 10;
 
     public Movie[] getPosters() {
-        return posters;
+        return repository.findAll();
+    }
+
+    public MovieManager(MovieRepository repository) {
+        this.repository = repository;
     }
 
     public void setCountMovie(int countMovie) {
@@ -15,22 +19,11 @@ public class MovieManager {
     }
 
     public void add(Movie poster) {
-        // создаём новый массив размером на единицу больше
-        int length = posters.length + 1;
-        Movie[] tmp = new Movie[length];
-        // itar + tab
-        // копируем поэлементно
-        // for (int i = 0; i < posters.length; i++) {
-        //   tmp[i] = posters[i];
-        // }
-        System.arraycopy(posters, 0, tmp, 0, posters.length);
-        // кладём последним наш элемент
-        int lastIndex = tmp.length - 1;
-        tmp[lastIndex] = poster;
-        posters = tmp;
+        repository.save(poster);
     }
 
     public Movie[] getAll() {
+        Movie[] posters = repository.findAll();
         if (posters.length < countMovie) {
             Movie[] result = new Movie[posters.length];
             // перебираем массив в прямом порядке

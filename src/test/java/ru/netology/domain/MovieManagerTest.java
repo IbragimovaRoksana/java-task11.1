@@ -5,23 +5,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovieManagerTest {
-    MovieManager manager = new MovieManager();
+    MovieRepository repository = new MovieRepository();
+    MovieManager manager = new MovieManager(repository);
     Movie film0 = new Movie();
-    Movie film1 = new Movie("1", "1URL", "Predator", "action");
-    Movie film2 = new Movie("2", "2URL", "Commando", "action");
-    Movie film3 = new Movie("3", "3URL", "Running Man", "action");
-    Movie film4 = new Movie("4", "4URL", "Jingle All the Way", "comedy");
-    Movie film5 = new Movie("5", "5URL", "Kindergarten Cop", "comedy");
-    Movie film6 = new Movie("6", "6URL", "TrueLies", "action");
-    Movie film7 = new Movie("7", "7URL", "The Terminator", "thriller");
-    Movie film8 = new Movie("8", "8URL", "Conan the Barbarian", "fantastic");
-    Movie film9 = new Movie("9", "9URL", "End of Days", "thriller");
-    Movie film10 = new Movie("10", "10URL", "Terminator 2: Judgment Day", "thriller");
-    Movie film11 = new Movie("11", "11URL", "Terminator 3: Judgment Day", "comedy");
-    Movie film12 = new Movie("12", "12URL", "Terminator: Dark Fate", "parody");
-    Movie film13 = new Movie("13", "13URL", "The 6th Day", "action");
-    Movie film14 = new Movie("14", "14URL", "Batman & Robin", "fantastic");
-    Movie film15 = new Movie("15", "15URL", "Eracer", "action");
+    Movie film1 = new Movie(1, "1URL", "Predator", "action");
+    Movie film2 = new Movie(2, "2URL", "Commando", "action");
+    Movie film3 = new Movie(3, "3URL", "Running Man", "action");
+    Movie film4 = new Movie(4, "4URL", "Jingle All the Way", "comedy");
+    Movie film5 = new Movie(5, "5URL", "Kindergarten Cop", "comedy");
+    Movie film6 = new Movie(6, "6URL", "TrueLies", "action");
+    Movie film7 = new Movie(7, "7URL", "The Terminator", "thriller");
+    Movie film8 = new Movie(8, "8URL", "Conan the Barbarian", "fantastic");
+    Movie film9 = new Movie(9, "9URL", "End of Days", "thriller");
+    Movie film10 = new Movie(10, "10URL", "Terminator 2: Judgment Day", "thriller");
+    Movie film11 = new Movie(11, "11URL", "Terminator 3: Judgment Day", "comedy");
+    Movie film12 = new Movie(12, "12URL", "Terminator: Dark Fate", "parody");
+    Movie film13 = new Movie(13, "13URL", "The 6th Day", "action");
+    Movie film14 = new Movie(14, "14URL", "Batman & Robin", "fantastic");
+    Movie film15 = new Movie(15, "15URL", "Eracer", "action");
 
     @Test
     void shouldAdd() {
