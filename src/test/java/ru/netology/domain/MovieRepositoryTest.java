@@ -35,7 +35,6 @@ class MovieRepositoryTest {
 
     @Test
     void shouldFindById() {
-        setUp();
         Movie expected = film1;
         Movie actual = manager.findById(film1.getId());
         assertEquals(expected, actual);
@@ -43,7 +42,6 @@ class MovieRepositoryTest {
 
     @Test
     void shouldRemoveById() {
-        setUp();
         manager.removeById(film1.getId());
         Movie[] expected = new Movie[]{film2, film3, film4, film5, film6};
         Movie[] actual = manager.findAll();
@@ -52,7 +50,7 @@ class MovieRepositoryTest {
 
     @Test
     void shouldRemoveAll() {
-        setUp();
+        manager.removeAll();
         Movie[] expected = new Movie[0];
         Movie[] actual = manager.findAll();
         assertArrayEquals(expected, actual);
