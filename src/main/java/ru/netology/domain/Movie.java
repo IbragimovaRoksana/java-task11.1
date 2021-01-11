@@ -6,12 +6,15 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+//@Data
 public class Movie {
-    private String id;
+    private int id;
     private String imageUrl;
     private String name;
     private String genre;
 
+    public int getId() {
+        return id;
+    }
 }
 
