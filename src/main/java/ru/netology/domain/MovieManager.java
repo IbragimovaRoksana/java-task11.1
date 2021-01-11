@@ -4,10 +4,14 @@ package ru.netology.domain;
 public class MovieManager {
 
     private Movie[] posters = new Movie[0];
-    private int countMovie = 10;
+    private int countMovie;
 
     public Movie[] getPosters() {
         return posters;
+    }
+
+    public MovieManager(int countMovie) {
+        this.countMovie = countMovie;
     }
 
     public void setCountMovie(int countMovie) {

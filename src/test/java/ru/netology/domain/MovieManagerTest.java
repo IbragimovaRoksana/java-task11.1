@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovieManagerTest {
-    MovieManager manager = new MovieManager();
+    MovieManager manager = new MovieManager(10);
     Movie film0 = new Movie();
     Movie film1 = new Movie("1", "1URL", "Predator", "action");
     Movie film2 = new Movie("2", "2URL", "Commando", "action");
